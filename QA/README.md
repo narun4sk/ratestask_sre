@@ -58,10 +58,29 @@ DIAGRAM                   XXXXXXXXXXXXX
 
 ### Answers
 
-1. answer
-2. answer
-3. answer
+1. I would try to implement the system similar to what's shown in the diagram, namely a *blue/green deployment*.
+   One copy of the application (green) would be deployed alongside the existing version (blue). Then the *load
+   balancer* is updated to switch to the new version (green). The most part of the traffic to the app changes to
+   the new version all at once, however often it's important to wait for the old (blue) version to finish serving
+   the requests sent to it.
 
+   Similar strategy applies to the *database*. Often data is the most valuable asset of the bussines, therefore
+   DB also should be replicated on at least 2 servers. Dependant on the amount of the write ingress traffic - 
+   perhaps also sharded.
+
+   Load Balancer here would ensure not only high throughput, but also seamles application updates.
+
+2. The most likely bottleneck is the time spent in the DB, therefore database replicas may serve not only for data
+   protection but also to spread the read requests. For write requests sharding is necessary.
+
+   It's unlikely that the modern website would survive just with one application server, therefore it's important
+   to keep in mind modular designs when developing apps, so that the apps may be easily spread accross multiple 
+   servers and share the load.
+
+3. Most bottlenecks arise from the bad decission in the code, therefore code revisions, profiling and similar well 
+   know good practices is a must. Just as important is to always keep in mind, that the app one day will grow too
+   big to fit on just one server, therfore it's better if the app is modular from the very begining, as breaking
+   the monoliths may prove very difficult.
 
 ## Additional questions
 
@@ -81,3 +100,11 @@ Please address *at least* one of the situations. Please describe:
 
 - Which parts of the system are the bottlenecks or problems that might make it incompatible with the new requirements?
 - How would you restructure and scale the system to address those?
+
+### More Answers
+
+1.
+
+2.
+
+3.
