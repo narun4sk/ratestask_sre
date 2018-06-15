@@ -10,13 +10,14 @@ Alternatively please check *docker_install.sh* script which can be used on any D
 
 Make sure there's no app on your host currently bound to the tcp port *8888* or *5432*.
 
-Run the following command:
+Change to the `ratestask_sre` directory and run the following command:
 
 ```
-docker-compose up --build
+$ cd ratestask_sre
+$ docker-compose up --build
 ```
 
-It will build `ratestask_app` and `ratestask_db` containers and start them. 
+It will build `ratestask_app` and `ratestask_db` containers and start them for you. 
 
 Once the containers are running, please navigate your browser to:
 
@@ -50,8 +51,8 @@ $ curl -s 'http://127.0.0.1:8888/get?date_from=2016-01-10&date_to=2016-01-11&ori
 
 ### Notes:
 
-Currently *prices* table allow duplicate records, which perhaps is a design flaw. I would rather alter
-the table schema and add the *primary key* based on the following columns *orig_code*, *dest_code* and *day*:
+Currently `prices` table allow duplicate records, which perhaps is a design flaw. I would rather alter
+the table schema and add the `primary key` based on the *orig_code*, *dest_code* and *day* columns:
 
 ```
 ALTER TABLE prices ADD PRIMARY KEY (orig_code, dest_code, day);
