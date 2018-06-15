@@ -50,8 +50,8 @@ $ curl -s 'http://127.0.0.1:8888/get?date_from=2016-01-10&date_to=2016-01-11&ori
 
 ### Notes:
 
-Currently *prices* table allow duplicate records, which perhaps is a design flaw. I would suggest to alter
-the table schema by adding the *primary key* based on the following columns *orig_code, dest_code, day*:
+Currently *prices* table allow duplicate records, which perhaps is a design flaw. I would rather alter
+the table schema and add the *primary key* based on the following columns *orig_code*, *dest_code* and *day*:
 
 ```
 ALTER TABLE prices ADD PRIMARY KEY (orig_code, dest_code, day);
