@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  ratestask_app:
+    container_name: ratestask_app
+    image: ratestask_app:latest
+    build:
+      context: ./ratestask_app
+      dockerfile: Dockerfile
+    working_dir: /opt/ratestask_app
+    environment:
+      - DB_HOST=ratestask_db
+      - DB_PORT=5432
+    restart: unless-stopped
+    volumes:
+      - ./ratestask_app:/opt/ratestask_app
+    ports:
+      - 8888:8888
+    depends_on:
+      - ratestask_db
+
+  ratestask_db:
+    container_name: ratestask_db
+    image: ratestask_db:latest
+    build:
+      context: ./ratestask_db
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 5432:5432
