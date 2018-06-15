@@ -15,16 +15,14 @@ followed by periods of heavy activity.
 
 Being a paid service, high availability is very much a requirement.
 
-1 How would you design the system?
-2 What parts of the system do you expect to become the bottlenecks as the load grows?
-3 How can those bottlenecks be addressed in the future?
+1. How would you design the system?
+2. What parts of the system do you expect to become the bottlenecks as the load grows?
+3. How can those bottlenecks be addressed in the future?
 
 Provide a high-level diagram, along with a few paragraphs describing the choices you've made and what factors do you need to take into consideration.
 
-### Answers
-
 ```
-                          XXXXXXXXXXXXX
+DIAGRAM                   XXXXXXXXXXXXX
                          XX            XXXXXX
                         XX                  XX  XXXXX
                       XXX                    XXX     XXX
@@ -50,9 +48,11 @@ Provide a high-level diagram, along with a few paragraphs describing the choices
 +---------+------------+---------+        +----------+------------+----------+
 ```
 
-1 answer
-2 answer
-3 answer
+### Answers
+
+1. answer
+2. answer
+3. answer
 
 
 ## Additional questions
