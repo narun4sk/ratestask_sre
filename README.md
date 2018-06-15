@@ -3,7 +3,7 @@
 * [docker-ce](https://docs.docker.com/engine/installation/)
 * [docker-compose](https://docs.docker.com/compose/install/)
 
-Alternatively please check *docker_install.sh* script which can be used on any Debian family distro (including Ubuntu).
+Alternatively please check the `docker_install.sh` script (has been tested on the *Debian Stretch* and *Jessie*).
 
 
 ## Initial setup:
