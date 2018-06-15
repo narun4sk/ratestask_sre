@@ -103,8 +103,12 @@ Please address *at least* one of the situations. Please describe:
 
 ### More Answers
 
-1.
+1. It's likely that the time on the database is the problem. Therefore DB should be sharded to increase write throughput.
+   Alternatively if processing the data requires much of CPU time, RAM - more worker servers should be added.
 
-2.
+2. Current design covers that very well. Clients would always see just the load balancer, therefore any backoffice updates
+   would be completely transparrent to the clients.
 
-3.
+3. It's always desirable to keep the *infrastructure as a code*, hence if infrastructure is declared in the multitude of 
+   *Ansible* roles/playbooks, then it is easy to recreate it anywhere. For development - perhaps in the local virtualization
+   cluster (KVM, VMWare, etc.), or even in the standalone *Vagrant* machines for each developer separately.
