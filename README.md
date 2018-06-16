@@ -49,6 +49,8 @@ $ curl -s 'http://127.0.0.1:8888/get?date_from=2016-01-10&date_to=2016-01-11&ori
 ]
 ```
 
+Currently benchmarks on the *localhost* show ~252 req/s. Such stats in my opinion are totally acceptable.
+
 ### Notes:
 
 Currently `prices` table allow duplicate records, which perhaps is a design flaw. I would rather alter
