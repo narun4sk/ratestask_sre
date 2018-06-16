@@ -248,4 +248,4 @@ if __name__ == "__main__":
     PORT = 8888
     DEBUG = False
     QUIET = False
-    run(host=HOST, port=PORT, debug=DEBUG, quiet=QUIET)
+    run(host=HOST, port=PORT, server='waitress', debug=DEBUG, quiet=QUIET)
