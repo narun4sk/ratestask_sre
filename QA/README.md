@@ -68,7 +68,7 @@ DIAGRAM                   XXXXXXXXXXXXX
    DB also should be replicated on at least 2 servers. Dependant on the amount of the write ingress traffic - 
    perhaps also sharded.
 
-   Load Balancer here would ensure not only high throughput, but also seamles application updates.
+   Load Balancer here would ensure not only high throughput, but also seamless application updates.
 
 2. The most likely bottleneck is the time spent in the DB, therefore database replicas may serve not only for data
    protection but also to spread the read requests. For write requests sharding is necessary.
