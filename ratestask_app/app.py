@@ -132,12 +132,12 @@ def get_query(params):
     ## to the SQL injection attack, meaning that the attacker could craft a malformed input string
     ## and either access unauthorized data or perform destructive operations on the database.
     base_query = ('SELECT day, ROUND(AVG(price)) average_price '
-             'FROM prices '
-             'INNER JOIN ports orig ON orig_code = orig.code '
-             'INNER JOIN ports dest ON dest_code = dest.code '
-             'WHERE {origin} = %(origin)s AND {destination} = %(destination)s '
-             'AND day BETWEEN %(date_from)s AND %(date_to)s '
-             'GROUP BY day ')
+                  'FROM prices '
+                  'INNER JOIN ports orig ON orig_code = orig.code '
+                  'INNER JOIN ports dest ON dest_code = dest.code '
+                  'WHERE {origin} = %(origin)s AND {destination} = %(destination)s '
+                  'AND day BETWEEN %(date_from)s AND %(date_to)s '
+                  'GROUP BY day ')
     base_fields = dict(origin='orig_code', destination='dest_code')
     if len(params['origin']) > 5:
         base_fields['origin'] = 'orig.parent_slug'
