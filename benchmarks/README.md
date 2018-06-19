@@ -1,5 +1,9 @@
 In average *252 req/sec* with *200 concurrent clients* - IMHO not too bad :)
 
+However I've done my test on 12 cores on the *i7*, each of which has been burning around 35+%.
+
+Hence on the average VPS you may only expect between 17-22+ req/sec per core. And life is hard again :)
+
 ```
 $ locust -f ratestask.py --no-web -c 200 -r 50 -n 10000 --logfile=ratestask.log --print-stats --only-summary
  Name                                                          # reqs      # fails     Avg     Min     Max  |  Median   req/s
