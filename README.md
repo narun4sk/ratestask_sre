@@ -1,7 +1,5 @@
 ## Job interview assignment completed...
 
----
-
 ## Prerequisites:
 
 * [docker-ce](https://docs.docker.com/engine/installation/)
